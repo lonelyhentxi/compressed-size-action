@@ -1,6 +1,6 @@
 name: 'compressed-size-action'
-description: 'Get compressed size differences for every PR'
-author: 'Jason Miller'
+description: 'A Fork, Get compressed size differences for every PR'
+author: 'Zhou Yeheng'
 branding:
   icon: 'archive'
   color: 'purple'

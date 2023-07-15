@@ -60,7 +60,7 @@ async function run(octokit, context, token) {
 		installScript = 'yarn --frozen-lockfile';
 		packageManager = 'yarn';
 	} else if (pnpmLock) {
-		installScript = 'pnpm install --frozen-lockfile';
+		installScript = 'pnpm install --no-frozen-lockfile';
 		packageManager = 'pnpm';
 	} else if (packageLock) {
 		installScript = 'npm ci';
@@ -129,7 +129,7 @@ async function run(octokit, context, token) {
 		installScript = `yarn --frozen-lockfile`;
 		packageManager = `yarn`;
 	} else if (pnpmLock) {
-		installScript = `pnpm install --frozen-lockfile`;
+		installScript = `pnpm install --no-frozen-lockfile`;
 		packageManager = `pnpm`;
 	} else if (packageLock) {
 		installScript = `npm ci`;
