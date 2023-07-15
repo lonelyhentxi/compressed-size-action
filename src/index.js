@@ -60,10 +60,14 @@ async function run(octokit, context, token) {
 		installScript = 'yarn --frozen-lockfile';
 		packageManager = 'yarn';
 	} else if (pnpmLock) {
-		installScript = 'pnpm install --no-frozen-lockfile';
+		installScript = 'pnpm install --frozen-lockfile';
 		packageManager = 'pnpm';
 	} else if (packageLock) {
 		installScript = 'npm ci';
+	}
+
+	if (getInput('install-script')) {
+		installScript = getInput('install-script');
 	}
 
 	startGroup(`[current] Install Dependencies`);
@@ -129,10 +133,14 @@ async function run(octokit, context, token) {
 		installScript = `yarn --frozen-lockfile`;
 		packageManager = `yarn`;
 	} else if (pnpmLock) {
-		installScript = `pnpm install --no-frozen-lockfile`;
+		installScript = `pnpm install --frozen-lockfile`;
 		packageManager = `pnpm`;
 	} else if (packageLock) {
 		installScript = `npm ci`;
+	}
+
+	if (getInput('install-script')) {
+		installScript = getInput('install-script');
 	}
 
 	console.log(`Installing using ${installScript}`);
